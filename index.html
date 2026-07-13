@@ -543,13 +543,13 @@ cursor:pointer;
 
 background:
 
-rgba(255,255,255,.035);
+rgba(255,255,255,.05);
 
 
 
 border:
 
-1px solid rgba(255,255,255,.12);
+1px solid rgba(130,160,255,.18);
 
 
 
@@ -557,6 +557,11 @@ backdrop-filter:
 
 blur(20px);
 
+box-shadow:
+
+0 0 60px rgba(50,80,200,.15);
+
+}
 
 
 
@@ -928,7 +933,36 @@ ENTERING GGULVERSE...
 
 </div>
 
+.loading{
 
+animation:
+
+loadingPulse 2s infinite;
+
+}
+
+
+
+@keyframes loadingPulse{
+
+
+0%,
+100%{
+
+opacity:.4;
+
+}
+
+
+
+50%{
+
+opacity:1;
+
+}
+
+
+}
 
 
 </div>
