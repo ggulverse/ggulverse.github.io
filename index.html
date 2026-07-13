@@ -54,17 +54,12 @@ box-sizing:border-box;
 html,
 body{
 
-
 width:100%;
-
 height:100%;
-
 
 overflow:hidden;
 
-
 background:#000;
-
 
 color:white;
 
@@ -84,7 +79,7 @@ sans-serif;
 
 
 /* ===========================
-   깊은 우주
+   우주 배경
 =========================== */
 
 
@@ -127,12 +122,9 @@ circle at center,
 
 position:absolute;
 
-
 width:100%;
 
-
 height:100%;
-
 
 
 perspective:1500px;
@@ -146,16 +138,12 @@ overflow:hidden;
 
 
 
-
-
 .star{
 
 
 position:absolute;
 
-
 left:50%;
-
 
 top:50%;
 
@@ -172,20 +160,26 @@ background:white;
 
 
 
-
-
-/* 먼 별 */
+/* ===========================
+   먼 별 + 중간 별
+=========================== */
 
 
 .star.normal{
+
 
 animation:
 
 normalMove linear infinite;
 
-filter:blur(.2px);
+
+filter:
+
+blur(.2px);
+
 
 }
+
 
 
 
@@ -206,8 +200,8 @@ translate3d(
 scale(.3);
 
 
-
 }
+
 
 
 
@@ -225,11 +219,9 @@ translate3d(
 scale(2);
 
 
-
 opacity:0;
 
 
-
 }
 
 
@@ -240,8 +232,9 @@ opacity:0;
 
 
 
-
-/* 가까운 별 */
+/* ===========================
+   가까운 별
+=========================== */
 
 
 .star.warp{
@@ -256,6 +249,8 @@ warpMove linear infinite;
 
 
 }
+
+
 
 
 
@@ -293,6 +288,7 @@ opacity:.8;
 
 
 
+
 100%{
 
 
@@ -305,7 +301,6 @@ translate3d(
 )
 
 scale(7);
-
 
 
 opacity:0;
@@ -321,8 +316,10 @@ opacity:0;
 
 
 
+
+
 /* ===========================
-   차원문
+   차원문 빛
 =========================== */
 
 
@@ -333,7 +330,6 @@ position:absolute;
 
 
 left:50%;
-
 
 top:50%;
 
@@ -376,8 +372,8 @@ animation:
 portalPulse 10s infinite;
 
 
-
 }
+
 
 
 
@@ -414,8 +410,12 @@ scale:1.25;
 }
 
 
+
+
+
+
 /* ===========================
-   메인 콘텐츠
+   메인
 =========================== */
 
 
@@ -448,8 +448,8 @@ align-items:center;
 text-align:center;
 
 
-
 }
+
 
 
 
@@ -517,6 +517,9 @@ fadeIn 5s ease;
 .project{
 
 
+position:relative;
+
+
 display:block;
 
 
@@ -540,10 +543,10 @@ cursor:pointer;
 
 
 
-
 background:
 
 rgba(255,255,255,.05);
+
 
 
 
@@ -553,15 +556,18 @@ border:
 
 
 
+
 backdrop-filter:
 
 blur(20px);
+
+
+
 
 box-shadow:
 
 0 0 60px rgba(50,80,200,.15);
 
-}
 
 
 
@@ -579,6 +585,52 @@ float 6s infinite;
 
 
 }
+
+.project::before{
+
+
+content:"";
+
+
+position:absolute;
+
+
+inset:-40px;
+
+
+
+border-radius:50px;
+
+
+
+
+background:
+
+
+radial-gradient(
+circle,
+
+rgba(90,130,255,.12),
+
+transparent 70%
+
+);
+
+
+
+z-index:-1;
+
+
+
+filter:
+
+blur(30px);
+
+
+
+}
+
+
 
 
 
@@ -610,6 +662,7 @@ rgba(255,255,255,.35);
 
 
 
+
 .chapter{
 
 
@@ -627,6 +680,7 @@ color:#777;
 
 
 
+
 .project h2{
 
 
@@ -640,6 +694,7 @@ font-weight:800;
 
 
 }
+
 
 
 
@@ -680,6 +735,12 @@ color:#999;
 
 
 
+
+/* ===========================
+   로딩
+=========================== */
+
+
 .loading{
 
 
@@ -698,7 +759,40 @@ letter-spacing:4px;
 color:#555;
 
 
+animation:
+
+loadingPulse 2s infinite;
+
+
 }
+
+
+
+@keyframes loadingPulse{
+
+
+0%,
+100%{
+
+
+opacity:.4;
+
+
+}
+
+
+
+50%{
+
+
+opacity:1;
+
+
+}
+
+
+}
+
 
 
 
@@ -718,8 +812,8 @@ transform:
 translateY(40px);
 
 
-
 }
+
 
 
 to{
@@ -733,12 +827,12 @@ transform:
 translateY(0);
 
 
-
 }
 
 
 
 }
+
 
 
 
@@ -768,18 +862,19 @@ transform:
 translateY(-12px);
 
 
-
 }
 
 
 
 }
+
 
 
 
 
 
 @media(max-width:700px){
+
 
 
 .brand{
@@ -827,7 +922,9 @@ font-size:30px;
 }
 
 
+
 }
+
 
 
 
@@ -847,8 +944,8 @@ font-size:30px;
 
 
 
-<div class="space" id="space"></div>
 
+<div class="space" id="space"></div>
 
 
 <div class="portal"></div>
@@ -884,13 +981,11 @@ A NEW UNIVERSE BEGINS
 class="project">
 
 
-
 <div class="chapter">
 
 CHAPTER 01
 
 </div>
-
 
 
 
@@ -920,7 +1015,6 @@ ENTER →
 
 
 
-
 </a>
 
 
@@ -933,36 +1027,6 @@ ENTERING GGULVERSE...
 
 </div>
 
-.loading{
-
-animation:
-
-loadingPulse 2s infinite;
-
-}
-
-
-
-@keyframes loadingPulse{
-
-
-0%,
-100%{
-
-opacity:.4;
-
-}
-
-
-
-50%{
-
-opacity:1;
-
-}
-
-
-}
 
 
 </div>
@@ -984,98 +1048,64 @@ document.getElementById("space");
 
 
 
-// =================================
-// Layer 1
-// 아주 먼 우주 별
-// =================================
 
-for(let i=0; i<120; i++){
-
-    const star = document.createElement("div");
-
-    star.className = "star normal";
+// ===========================
+// 먼 별
+// ===========================
 
 
-    const size = Math.random()*1.2 + 0.3;
-
-    star.style.width = size + "px";
-    star.style.height = size + "px";
+for(let i=0;i<120;i++){
 
 
-    star.style.opacity =
-        Math.random()*0.35 + 0.15;
+const star =
+document.createElement("div");
 
 
-    star.style.left =
-        Math.random()*100 + "%";
-
-    star.style.top =
-        Math.random()*100 + "%";
-
-
-    star.style.animationDuration =
-        (18 + Math.random()*15) + "s";
-
-
-    star.style.animationDelay =
-        Math.random()*15 + "s";
-
-
-    space.appendChild(star);
-
-}
+star.className =
+"star normal";
 
 
 
-
-// =================================
-// Layer 2
-// 중간 거리 별
-// =================================
-
-for(let i=0; i<40; i++){
-
-    const star = document.createElement("div");
-
-    star.className = "star normal";
-
-
-    const size =
-        Math.random()*2 + 0.8;
-
-
-    star.style.width =
-        size + "px";
-
-    star.style.height =
-        size + "px";
-
-
-    star.style.opacity =
-        Math.random()*0.4 + 0.4;
+const size =
+Math.random()*1.2+0.3;
 
 
 
-    star.style.left =
-        Math.random()*100 + "%";
+star.style.width =
+size+"px";
 
 
-    star.style.top =
-        Math.random()*100 + "%";
-
-
-
-    star.style.animationDuration =
-        (10 + Math.random()*8) + "s";
+star.style.height =
+size+"px";
 
 
 
-    star.style.animationDelay =
-        Math.random()*8 + "s";
+star.style.opacity =
+Math.random()*0.35+0.15;
 
 
 
-    space.appendChild(star);
+star.style.left =
+Math.random()*100+"%";
+
+
+star.style.top =
+Math.random()*100+"%";
+
+
+
+star.style.animationDuration =
+(18+Math.random()*15)+"s";
+
+
+
+star.style.animationDelay =
+Math.random()*15+"s";
+
+
+
+space.appendChild(star);
+
 
 }
 
@@ -1083,53 +1113,135 @@ for(let i=0; i<40; i++){
 
 
 
-// =================================
-// Layer 3
+
+
+
+// ===========================
+// 중간 별
+// ===========================
+
+
+for(let i=0;i<40;i++){
+
+
+
+const star =
+document.createElement("div");
+
+
+
+star.className =
+"star normal";
+
+
+
+const size =
+Math.random()*2+0.8;
+
+
+
+star.style.width =
+size+"px";
+
+
+star.style.height =
+size+"px";
+
+
+
+star.style.opacity =
+Math.random()*0.4+0.4;
+
+
+
+star.style.left =
+Math.random()*100+"%";
+
+
+
+star.style.top =
+Math.random()*100+"%";
+
+
+
+star.style.animationDuration =
+(10+Math.random()*8)+"s";
+
+
+
+star.style.animationDelay =
+Math.random()*8+"s";
+
+
+
+space.appendChild(star);
+
+
+
+}
+
+
+
+
+
+
+
+// ===========================
 // 가까운 상승 별
-// =================================
-
-for(let i=0; i<10; i++){
-
-    const star = document.createElement("div");
-
-    star.className = "star warp";
+// ===========================
 
 
-    const size =
-        Math.random()*3 + 1.5;
+for(let i=0;i<10;i++){
 
 
 
-    star.style.width =
-        size + "px";
-
-
-    star.style.height =
-        size + "px";
+const star =
+document.createElement("div");
 
 
 
-    star.style.left =
-        Math.random()*100 + "%";
+star.className =
+"star warp";
 
 
 
-    star.style.top =
-        Math.random()*100 + "%";
+const size =
+Math.random()*3+1.5;
 
 
 
-    star.style.animationDuration =
-        (4 + Math.random()*4) + "s";
+star.style.width =
+size+"px";
+
+
+star.style.height =
+size+"px";
 
 
 
-    star.style.animationDelay =
-        Math.random()*12 + "s";
+star.style.left =
+Math.random()*100+"%";
 
 
 
-    space.appendChild(star);
+star.style.top =
+Math.random()*100+"%";
+
+
+
+star.style.animationDuration =
+(4+Math.random()*4)+"s";
+
+
+
+star.style.animationDelay =
+Math.random()*12+"s";
+
+
+
+space.appendChild(star);
+
+
 
 }
 
@@ -1138,8 +1250,9 @@ for(let i=0; i<10; i++){
 
 
 
-
-// 10초 후 EveryCalc 이동
+// ===========================
+// 10초 후 이동
+// ===========================
 
 
 setTimeout(()=>{
@@ -1156,6 +1269,7 @@ location.href =
 
 
 </script>
+
 
 
 
