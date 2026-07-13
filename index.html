@@ -8,6 +8,8 @@
 
 <title>GGULVERSE | A New Universe Begins</title>
 
+
+<!-- 테스트용 10초 이동 -->
 <meta http-equiv="refresh" content="10;url=https://ggulverse.github.io/everycalc/">
 
 
@@ -34,10 +36,12 @@ body{
     overflow:hidden;
 
     background:
-    radial-gradient(circle at center,
-    #18213d 0%,
-    #090b14 35%,
-    #000 75%);
+    radial-gradient(
+    circle at center,
+    #182642 0%,
+    #090b15 35%,
+    #000 75%
+    );
 
     color:white;
 
@@ -51,7 +55,7 @@ body{
 
 
 
-/* 우주 별 레이어 */
+/* 우주 공간 */
 
 .space{
 
@@ -60,118 +64,208 @@ body{
     width:100%;
     height:100%;
 
+    perspective:1000px;
+
     overflow:hidden;
 
 }
 
 
 
-/* 별 */
+/* 워프 별 */
 
 .star{
-
-    position:absolute;
-
-    width:2px;
-    height:2px;
-
-    background:white;
-
-    border-radius:50%;
-
-    animation:
-    moveStar 12s linear infinite;
-
-    opacity:.7;
-
-}
-
-
-@keyframes moveStar{
-
-    from{
-
-        transform:
-        translateY(0)
-        scale(1);
-
-    }
-
-    to{
-
-        transform:
-        translateY(120vh)
-        scale(2);
-
-    }
-
-}
-
-
-
-/* 중앙 우주 포털 */
-
-.portal{
 
     position:absolute;
 
     left:50%;
     top:50%;
 
+    width:3px;
+    height:3px;
+
+    background:white;
+
+    border-radius:50%;
+
+    animation:
+    warp 6s linear infinite;
+
+    opacity:0;
+
+}
+
+
+
+/*
+ 앞으로 돌진 + 약간 위쪽 대각선
+*/
+
+@keyframes warp{
+
+
+0%{
+
+    transform:
+
+    translate3d(
+    -100px,
+    120px,
+    -900px
+    )
+
+    scale(.2);
+
+    opacity:0;
+
+}
+
+
+30%{
+
+    opacity:1;
+
+}
+
+
+100%{
+
+    transform:
+
+    translate3d(
+    220px,
+    -220px,
+    700px
+    )
+
+    scale(5);
+
+    opacity:0;
+
+}
+
+
+}
+
+
+
+/* 별 위치 다양화 */
+
+
+.star:nth-child(1){
+
+    animation-delay:0s;
+
+}
+
+.star:nth-child(2){
+
+    animation-delay:1s;
+
+}
+
+
+.star:nth-child(3){
+
+    animation-delay:2s;
+
+}
+
+
+.star:nth-child(4){
+
+    animation-delay:3s;
+
+}
+
+
+.star:nth-child(5){
+
+    animation-delay:4s;
+
+}
+
+
+.star:nth-child(6){
+
+    animation-delay:5s;
+
+}
+
+
+
+
+
+/* 중앙 워프 포털 */
+
+
+.portal{
+
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+
+    width:500px;
+    height:500px;
+
+
     transform:
     translate(-50%,-50%);
 
-    width:450px;
-    height:450px;
-
 
     background:
+
     radial-gradient(
     circle,
-    rgba(90,140,255,.35),
+    rgba(100,150,255,.35),
     transparent 65%
     );
 
 
-    filter:blur(20px);
+    filter:blur(25px);
 
 
     animation:
 
-    pulse 5s infinite;
+    portalMove 6s infinite;
+
 
 }
 
 
 
-@keyframes pulse{
-
-    0%,100%{
-
-        transform:
-        translate(-50%,-50%)
-        scale(1);
-
-        opacity:.5;
-
-    }
+@keyframes portalMove{
 
 
-    50%{
+0%,100%{
 
-        transform:
-        translate(-50%,-50%)
-        scale(1.4);
+    scale:1;
 
-        opacity:.9;
-
-    }
+    opacity:.4;
 
 }
+
+
+50%{
+
+    scale:1.5;
+
+    opacity:.9;
+
+}
+
+
+}
+
+
 
 
 
 /* 내용 */
+
 
 .content{
 
@@ -179,7 +273,6 @@ body{
     position:absolute;
 
     width:100%;
-
     height:100%;
 
 
@@ -199,9 +292,10 @@ body{
 
 
 
-/* 브랜드 */
+
 
 .brand{
+
 
     font-size:64px;
 
@@ -212,9 +306,12 @@ body{
 
     animation:
 
-    appear 2s ease;
+    fadeUp 2s ease;
+
 
 }
+
+
 
 
 
@@ -227,9 +324,10 @@ body{
 
     letter-spacing:4px;
 
+
     animation:
 
-    appear 3s ease;
+    fadeUp 3s ease;
 
 
 }
@@ -246,17 +344,17 @@ body{
     padding:35px 60px;
 
 
+    border-radius:25px;
+
+
     border:
 
     1px solid rgba(255,255,255,.15);
 
 
-    border-radius:25px;
-
-
     background:
 
-    rgba(255,255,255,.05);
+    rgba(255,255,255,.06);
 
 
     backdrop-filter:blur(15px);
@@ -271,15 +369,20 @@ body{
 
 
 
+
+
 .chapter{
+
+
+    font-size:13px;
 
     color:#888;
 
     letter-spacing:4px;
 
-    font-size:13px;
 
 }
+
 
 
 
@@ -288,7 +391,8 @@ body{
 
     margin-top:15px;
 
-    font-size:36px;
+    font-size:38px;
+
 
 }
 
@@ -296,57 +400,15 @@ body{
 
 .project p{
 
+
     margin-top:10px;
 
     color:#aaa;
 
-}
-
-
-
-@keyframes float{
-
-
-    0%,100%{
-
-        transform:translateY(0);
-
-    }
-
-
-    50%{
-
-        transform:translateY(-15px);
-
-    }
 
 }
 
 
-
-@keyframes appear{
-
-
-    from{
-
-        opacity:0;
-
-        transform:
-        translateY(30px);
-
-    }
-
-
-    to{
-
-        opacity:1;
-
-        transform:
-        translateY(0);
-
-    }
-
-}
 
 
 
@@ -359,9 +421,63 @@ body{
 
     color:#777;
 
-    font-size:14px;
+    letter-spacing:2px;
+
 
 }
+
+
+
+
+
+@keyframes fadeUp{
+
+
+from{
+
+    opacity:0;
+
+    transform:
+    translateY(40px);
+
+}
+
+
+to{
+
+    opacity:1;
+
+    transform:
+    translateY(0);
+
+}
+
+
+}
+
+
+
+
+@keyframes float{
+
+
+0%,100%{
+
+    transform:translateY(0);
+
+}
+
+
+50%{
+
+    transform:translateY(-15px);
+
+}
+
+
+}
+
+
 
 
 </style>
@@ -373,16 +489,14 @@ body{
 <body>
 
 
-
 <div class="space">
 
-
-<div class="star" style="left:10%;animation-delay:0s"></div>
-<div class="star" style="left:25%;animation-delay:3s"></div>
-<div class="star" style="left:40%;animation-delay:5s"></div>
-<div class="star" style="left:60%;animation-delay:2s"></div>
-<div class="star" style="left:75%;animation-delay:7s"></div>
-<div class="star" style="left:90%;animation-delay:4s"></div>
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
 
 
 </div>
@@ -390,6 +504,7 @@ body{
 
 
 <div class="portal"></div>
+
 
 
 
@@ -403,11 +518,13 @@ GGULVERSE
 </div>
 
 
+
 <div class="subtitle">
 
 A NEW UNIVERSE BEGINS
 
 </div>
+
 
 
 
@@ -421,6 +538,7 @@ CHAPTER 01
 </div>
 
 
+
 <h2>
 
 EveryCalc
@@ -428,11 +546,13 @@ EveryCalc
 </h2>
 
 
+
 <p>
 
 Every Calculation in One Place
 
 </p>
+
 
 
 </div>
