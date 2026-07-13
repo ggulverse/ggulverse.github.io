@@ -953,59 +953,98 @@ document.getElementById("space");
 
 
 
-// 깊은 배경 별
+// =================================
+// Layer 1
+// 아주 먼 우주 별
+// =================================
 
-for(let i=0;i<120;i++){
+for(let i=0; i<120; i++){
 
+    const star = document.createElement("div");
 
-const star =
-document.createElement("div");
-
-
-
-star.className =
-"star normal";
+    star.className = "star normal";
 
 
+    const size = Math.random()*1.2 + 0.3;
 
-const size =
-Math.random()*2+0.5;
-
-
-
-star.style.width =
-size+"px";
+    star.style.width = size + "px";
+    star.style.height = size + "px";
 
 
-
-star.style.height =
-size+"px";
-
+    star.style.opacity =
+        Math.random()*0.35 + 0.15;
 
 
-star.style.left =
-Math.random()*100+"%";
+    star.style.left =
+        Math.random()*100 + "%";
+
+    star.style.top =
+        Math.random()*100 + "%";
 
 
-
-star.style.top =
-Math.random()*100+"%";
-
+    star.style.animationDuration =
+        (18 + Math.random()*15) + "s";
 
 
-star.style.animationDuration =
-(10+Math.random()*12)+"s";
+    star.style.animationDelay =
+        Math.random()*15 + "s";
+
+
+    space.appendChild(star);
+
+}
 
 
 
-star.style.animationDelay =
-Math.random()*10+"s";
+
+// =================================
+// Layer 2
+// 중간 거리 별
+// =================================
+
+for(let i=0; i<40; i++){
+
+    const star = document.createElement("div");
+
+    star.className = "star normal";
+
+
+    const size =
+        Math.random()*2 + 0.8;
+
+
+    star.style.width =
+        size + "px";
+
+    star.style.height =
+        size + "px";
+
+
+    star.style.opacity =
+        Math.random()*0.4 + 0.4;
 
 
 
-space.appendChild(star);
+    star.style.left =
+        Math.random()*100 + "%";
 
 
+    star.style.top =
+        Math.random()*100 + "%";
+
+
+
+    star.style.animationDuration =
+        (10 + Math.random()*8) + "s";
+
+
+
+    star.style.animationDelay =
+        Math.random()*8 + "s";
+
+
+
+    space.appendChild(star);
 
 }
 
@@ -1013,63 +1052,56 @@ space.appendChild(star);
 
 
 
-
+// =================================
+// Layer 3
 // 가까운 상승 별
+// =================================
 
-for(let i=0;i<12;i++){
+for(let i=0; i<10; i++){
 
+    const star = document.createElement("div");
 
-
-const star =
-document.createElement("div");
-
-
-
-star.className =
-"star warp";
+    star.className = "star warp";
 
 
-
-const size =
-Math.random()*3+1;
+    const size =
+        Math.random()*3 + 1.5;
 
 
 
-star.style.width =
-size+"px";
+    star.style.width =
+        size + "px";
+
+
+    star.style.height =
+        size + "px";
 
 
 
-star.style.height =
-size+"px";
+    star.style.left =
+        Math.random()*100 + "%";
 
 
 
-star.style.left =
-Math.random()*100+"%";
+    star.style.top =
+        Math.random()*100 + "%";
 
 
 
-star.style.top =
-Math.random()*100+"%";
+    star.style.animationDuration =
+        (4 + Math.random()*4) + "s";
 
 
 
-star.style.animationDuration =
-(4+Math.random()*5)+"s";
+    star.style.animationDelay =
+        Math.random()*12 + "s";
 
 
 
-star.style.animationDelay =
-Math.random()*10+"s";
-
-
-
-space.appendChild(star);
-
-
+    space.appendChild(star);
 
 }
+
 
 
 
