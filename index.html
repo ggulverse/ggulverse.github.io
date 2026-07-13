@@ -36,6 +36,8 @@ crossorigin="anonymous"></script>
 
 
 
+
+
 <style>
 
 
@@ -51,6 +53,7 @@ box-sizing:border-box;
 
 html,
 body{
+
 
 width:100%;
 
@@ -81,7 +84,7 @@ sans-serif;
 
 
 /* ===========================
-   깊은 우주 배경
+   깊은 우주
 =========================== */
 
 
@@ -93,38 +96,30 @@ background:
 
 radial-gradient(
 circle at 45% 45%,
-rgba(45,70,150,.10),
-transparent 35%
+rgba(45,70,150,.08),
+transparent 38%
 ),
-
 
 
 radial-gradient(
 circle at 75% 70%,
-rgba(90,40,160,.06),
-transparent 40%
+rgba(100,50,160,.05),
+transparent 45%
 ),
-
 
 
 radial-gradient(
 circle at center,
-#0b1020,
-#03040a 55%,
-#000 90%
+#090d18,
+#020309 60%,
+#000 95%
 );
-
 
 
 }
 
 
 
-
-
-/* ===========================
-   우주 공간
-=========================== */
 
 
 .space{
@@ -143,7 +138,6 @@ height:100%;
 perspective:1500px;
 
 
-
 overflow:hidden;
 
 
@@ -152,10 +146,6 @@ overflow:hidden;
 
 
 
-
-/* ===========================
-   별
-=========================== */
 
 
 .star{
@@ -182,10 +172,15 @@ background:white;
 
 
 
-/* 일반 별 */
+
+
+/* 먼 별 */
 
 
 .star.normal{
+
+
+opacity:.5;
 
 
 animation:
@@ -193,11 +188,7 @@ animation:
 normalMove linear infinite;
 
 
-opacity:.6;
-
-
 }
-
 
 
 
@@ -212,10 +203,11 @@ transform:
 translate3d(
 0,
 0,
--1200px
+-1300px
 )
 
-scale(.4);
+scale(.3);
+
 
 
 }
@@ -228,30 +220,37 @@ to{
 transform:
 
 translate3d(
-60px,
--120px,
+30px,
+150px,
 700px
 )
 
 scale(2);
 
 
+
 opacity:0;
 
 
-}
-
 
 }
 
 
 
+}
 
 
-/* 접근하는 별 */
+
+
+
+
+/* 가까운 별 */
 
 
 .star.warp{
+
+
+opacity:0;
 
 
 animation:
@@ -259,11 +258,7 @@ animation:
 warpMove linear infinite;
 
 
-opacity:0;
-
-
 }
-
 
 
 
@@ -291,7 +286,6 @@ opacity:0;
 
 
 
-
 35%{
 
 
@@ -302,20 +296,19 @@ opacity:.8;
 
 
 
-
-
 100%{
 
 
 transform:
 
 translate3d(
-100px,
--320px,
+60px,
+260px,
 1200px
 )
 
 scale(7);
+
 
 
 opacity:0;
@@ -330,8 +323,9 @@ opacity:0;
 
 
 
+
 /* ===========================
-   중앙의 문
+   차원문
 =========================== */
 
 
@@ -364,10 +358,9 @@ background:
 
 
 radial-gradient(
-
 circle,
 
-rgba(90,130,255,.18),
+rgba(90,130,255,.15),
 
 transparent 65%
 
@@ -386,8 +379,8 @@ animation:
 portalPulse 10s infinite;
 
 
-}
 
+}
 
 
 
@@ -399,7 +392,7 @@ portalPulse 10s infinite;
 100%{
 
 
-opacity:.25;
+opacity:.2;
 
 
 scale:1;
@@ -412,7 +405,7 @@ scale:1;
 50%{
 
 
-opacity:.5;
+opacity:.45;
 
 
 scale:1.25;
@@ -424,10 +417,8 @@ scale:1.25;
 }
 
 
-
-
 /* ===========================
-   콘텐츠
+   메인 콘텐츠
 =========================== */
 
 
@@ -450,9 +441,7 @@ display:flex;
 flex-direction:column;
 
 
-
 justify-content:center;
-
 
 
 align-items:center;
@@ -462,7 +451,9 @@ align-items:center;
 text-align:center;
 
 
+
 }
+
 
 
 
@@ -473,13 +464,10 @@ text-align:center;
 font-size:70px;
 
 
-
 font-weight:900;
 
 
-
 letter-spacing:18px;
-
 
 
 color:#eeeeee;
@@ -496,22 +484,20 @@ fadeIn 3s ease;
 
 
 
+
 .subtitle{
 
 
 margin-top:20px;
 
 
-
 font-size:18px;
-
 
 
 letter-spacing:5px;
 
 
-
-color:#888;
+color:#777;
 
 
 
@@ -526,18 +512,34 @@ fadeIn 5s ease;
 
 
 
+/* ===========================
+   프로젝트 카드
+=========================== */
+
+
 .project{
+
+
+display:block;
 
 
 margin-top:80px;
 
 
-
 padding:40px 70px;
 
 
-
 border-radius:30px;
+
+
+
+text-decoration:none;
+
+
+color:white;
+
+
+cursor:pointer;
 
 
 
@@ -561,6 +563,14 @@ blur(20px);
 
 
 
+transition:
+
+transform .4s ease,
+background .4s ease,
+border-color .4s ease;
+
+
+
 animation:
 
 float 6s infinite;
@@ -571,6 +581,32 @@ float 6s infinite;
 
 
 
+.project:hover{
+
+
+transform:
+
+translateY(-20px)
+scale(1.03);
+
+
+
+background:
+
+rgba(255,255,255,.07);
+
+
+
+border-color:
+
+rgba(255,255,255,.35);
+
+
+
+}
+
+
+
 
 .chapter{
 
@@ -578,13 +614,10 @@ float 6s infinite;
 font-size:13px;
 
 
-
 letter-spacing:5px;
 
 
-
 color:#777;
-
 
 
 }
@@ -598,9 +631,7 @@ color:#777;
 margin-top:15px;
 
 
-
 font-size:42px;
-
 
 
 font-weight:800;
@@ -617,9 +648,28 @@ font-weight:800;
 margin-top:12px;
 
 
-
 color:#888;
 
+
+}
+
+
+
+
+
+.enter{
+
+
+margin-top:20px;
+
+
+font-size:12px;
+
+
+letter-spacing:4px;
+
+
+color:#999;
 
 
 }
@@ -637,28 +687,19 @@ position:absolute;
 bottom:45px;
 
 
-
 font-size:13px;
-
 
 
 letter-spacing:4px;
 
 
-
 color:#555;
-
 
 
 }
 
 
 
-
-
-/* ===========================
-   애니메이션
-=========================== */
 
 
 @keyframes fadeIn{
@@ -670,7 +711,6 @@ from{
 opacity:0;
 
 
-
 transform:
 
 translateY(40px);
@@ -680,12 +720,10 @@ translateY(40px);
 }
 
 
-
 to{
 
 
 opacity:1;
-
 
 
 transform:
@@ -716,7 +754,6 @@ transform:
 translateY(0);
 
 
-
 }
 
 
@@ -740,14 +777,7 @@ translateY(-12px);
 
 
 
-
-/* ===========================
-   모바일
-=========================== */
-
-
 @media(max-width:700px){
-
 
 
 .brand{
@@ -756,9 +786,7 @@ translateY(-12px);
 font-size:38px;
 
 
-
 letter-spacing:10px;
-
 
 
 }
@@ -771,7 +799,6 @@ letter-spacing:10px;
 font-size:12px;
 
 
-
 }
 
 
@@ -782,13 +809,10 @@ font-size:12px;
 padding:30px;
 
 
-
 margin-top:50px;
 
 
-
 }
-
 
 
 
@@ -798,12 +822,10 @@ margin-top:50px;
 font-size:30px;
 
 
-
 }
 
 
 }
-
 
 
 
@@ -823,9 +845,7 @@ font-size:30px;
 
 
 
-
 <div class="space" id="space"></div>
-
 
 
 
@@ -834,8 +854,8 @@ font-size:30px;
 
 
 
-<div class="content">
 
+<div class="content">
 
 
 
@@ -858,7 +878,8 @@ A NEW UNIVERSE BEGINS
 
 
 
-<div class="project">
+<a href="https://ggulverse.github.io/everycalc/"
+class="project">
 
 
 
@@ -888,7 +909,18 @@ Every Calculation in One Place
 
 
 
+
+<div class="enter">
+
+ENTER →
+
 </div>
+
+
+
+
+</a>
+
 
 
 
@@ -910,74 +942,63 @@ ENTERING GGULVERSE...
 
 
 
+
 <script>
 
 
-
 const space =
-
 document.getElementById("space");
 
 
 
 
 
-// 깊은 공간의 일반 별
+// 깊은 배경 별
 
 for(let i=0;i<120;i++){
 
 
-
 const star =
-
 document.createElement("div");
 
 
 
 star.className =
-
 "star normal";
 
 
 
 const size =
-
 Math.random()*2+0.5;
 
 
 
 star.style.width =
-
 size+"px";
 
 
 
 star.style.height =
-
 size+"px";
 
 
 
 star.style.left =
-
 Math.random()*100+"%";
 
 
 
 star.style.top =
-
 Math.random()*100+"%";
 
 
 
 star.style.animationDuration =
-
-(8+Math.random()*10)+"s";
+(10+Math.random()*12)+"s";
 
 
 
 star.style.animationDelay =
-
 Math.random()*10+"s";
 
 
@@ -992,62 +1013,54 @@ space.appendChild(star);
 
 
 
-// 가끔 지나가는 가까운 별
+
+// 가까운 상승 별
 
 for(let i=0;i<12;i++){
 
 
 
 const star =
-
 document.createElement("div");
 
 
 
 star.className =
-
 "star warp";
 
 
 
 const size =
-
 Math.random()*3+1;
 
 
 
 star.style.width =
-
 size+"px";
 
 
 
 star.style.height =
-
 size+"px";
 
 
 
 star.style.left =
-
 Math.random()*100+"%";
 
 
 
 star.style.top =
-
 Math.random()*100+"%";
 
 
 
 star.style.animationDuration =
-
 (4+Math.random()*5)+"s";
 
 
 
 star.style.animationDelay =
-
 Math.random()*10+"s";
 
 
@@ -1064,6 +1077,7 @@ space.appendChild(star);
 
 
 // 10초 후 EveryCalc 이동
+
 
 setTimeout(()=>{
 
@@ -1084,6 +1098,5 @@ location.href =
 
 
 </body>
-
 
 </html>
