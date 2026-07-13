@@ -14,7 +14,7 @@ GGULVERSE | A New Universe Begins
 
 
 <meta name="description"
-content="GGULVERSE는 다양한 디지털 프로젝트와 서비스를 만들어가는 공간입니다. CHAPTER 01 EveryCalc">
+content="GGULVERSE는 새로운 디지털 프로젝트와 서비스를 만들어가는 공간입니다. CHAPTER 01 EveryCalc">
 
 
 <meta name="robots"
@@ -57,6 +57,9 @@ height:100%;
 
 overflow:hidden;
 
+background:#000;
+
+color:white;
 
 font-family:
 
@@ -65,48 +68,42 @@ font-family:
 Arial,
 sans-serif;
 
-
-background:#000;
-
-color:white;
-
 }
 
 
 
 
+
 /* ===========================
-   우주 배경
+   성운 배경
 =========================== */
 
 
 body{
 
-
 background:
 
 
 radial-gradient(
-circle at 30% 40%,
-rgba(70,100,255,.18),
+circle at 35% 40%,
+rgba(80,120,255,.16),
 transparent 35%
 ),
 
 
 radial-gradient(
-circle at 70% 60%,
-rgba(150,80,255,.15),
+circle at 75% 65%,
+rgba(160,90,255,.12),
 transparent 40%
 ),
 
 
 radial-gradient(
 circle at center,
-#15233f,
-#05060b 55%,
+#111b35,
+#05060c 55%,
 #000 90%
 );
-
 
 
 }
@@ -114,12 +111,14 @@ circle at center,
 
 
 
+
 /* ===========================
-   공간
+   우주 공간
 =========================== */
 
 
 .space{
+
 
 position:absolute;
 
@@ -128,17 +127,21 @@ width:100%;
 height:100%;
 
 
-perspective:1200px;
+perspective:1400px;
+
 
 overflow:hidden;
+
 
 }
 
 
 
 
+
+
 /* ===========================
-   별
+   별 기본
 =========================== */
 
 
@@ -148,18 +151,18 @@ overflow:hidden;
 position:absolute;
 
 
-background:white;
+left:50%;
+
+top:50%;
 
 
 border-radius:50%;
 
 
-opacity:0;
+background:white;
 
 
-animation:
-
-warp 6s linear infinite;
+opacity:.8;
 
 
 }
@@ -167,10 +170,141 @@ warp 6s linear infinite;
 
 
 
-/* 별 잔상 */
+
+/*
+일반 별 이동
+*/
 
 
-.star::after{
+.star.normal{
+
+
+animation:
+
+moveStar linear infinite;
+
+
+}
+
+
+
+
+@keyframes moveStar{
+
+
+from{
+
+
+transform:
+
+translate3d(0,0,-1200px)
+
+scale(.5);
+
+
+}
+
+
+
+to{
+
+
+transform:
+
+translate3d(50px,-80px,700px)
+
+scale(2);
+
+
+}
+
+
+}
+
+
+
+
+
+/*
+워프 별
+*/
+
+
+.star.warp{
+
+
+animation:
+
+warpStar linear infinite;
+
+
+}
+
+
+
+
+@keyframes warpStar{
+
+
+from{
+
+
+transform:
+
+translate3d(0,0,-1400px)
+
+scale(.3);
+
+
+opacity:0;
+
+
+}
+
+
+
+30%{
+
+
+opacity:1;
+
+
+}
+
+
+
+
+to{
+
+
+transform:
+
+translate3d(
+120px,
+-280px,
+1200px
+)
+
+scale(7);
+
+
+opacity:0;
+
+
+}
+
+
+}
+
+
+
+
+/* ===========================
+ 워프 잔상
+=========================== */
+
+
+.star.warp::after{
 
 
 content:"";
@@ -179,14 +313,22 @@ content:"";
 position:absolute;
 
 
-top:50%;
+width:var(--trail);
+
+
+height:1px;
+
 
 right:100%;
 
 
-width:40px;
+top:50%;
 
-height:1px;
+
+transform:
+
+translateY(-50%);
+
 
 
 background:
@@ -198,90 +340,13 @@ transparent
 );
 
 
-transform:
-
-translateY(-50%);
-
+opacity:.7;
 
 
 }
-
-
-
-
-
-/*
-앞으로 돌진 + 상승
-*/
-
-
-@keyframes warp{
-
-
-0%{
-
-
-transform:
-
-
-translate3d(
-0,
-0,
--1500px
-)
-
-scale(.2);
-
-
-
-opacity:0;
-
-
-}
-
-
-
-
-25%{
-
-
-opacity:1;
-
-
-}
-
-
-
-100%{
-
-
-transform:
-
-
-translate3d(
-120px,
--350px,
-1200px
-)
-
-scale(8);
-
-
-
-opacity:0;
-
-
-}
-
-
-
-}
-
-
-
 
 /* ===========================
- 중앙 워프
+   중앙 워프 빛
 =========================== */
 
 
@@ -312,7 +377,7 @@ background:
 
 radial-gradient(
 circle,
-rgba(100,150,255,.45),
+rgba(100,150,255,.32),
 transparent 65%
 );
 
@@ -320,16 +385,18 @@ transparent 65%
 
 filter:
 
-blur(35px);
+blur(40px);
 
 
 
 animation:
 
-portalPulse 7s infinite;
+portalPulse 8s infinite;
+
 
 
 }
+
 
 
 
@@ -339,9 +406,11 @@ portalPulse 7s infinite;
 0%,
 100%{
 
-scale:1;
 
 opacity:.35;
+
+scale:1;
+
 
 }
 
@@ -349,21 +418,24 @@ opacity:.35;
 
 50%{
 
-scale:1.7;
 
-opacity:.9;
+opacity:.65;
+
+scale:1.35;
+
 
 }
 
 
 }
+
 
 
 
 
 
 /* ===========================
- 내용
+   콘텐츠
 =========================== */
 
 
@@ -378,6 +450,7 @@ width:100%;
 height:100%;
 
 
+
 display:flex;
 
 
@@ -390,18 +463,14 @@ justify-content:center;
 align-items:center;
 
 
+
 text-align:center;
+
 
 
 }
 
 
-
-
-
-/* ===========================
-   브랜드
-=========================== */
 
 
 .brand{
@@ -454,11 +523,6 @@ appear 4s ease;
 
 
 
-/* ===========================
-   프로젝트 카드
-=========================== */
-
-
 .project{
 
 
@@ -472,15 +536,15 @@ border-radius:30px;
 
 
 
-border:
-
-1px solid rgba(255,255,255,.18);
-
-
-
 background:
 
-rgba(255,255,255,.06);
+rgba(255,255,255,.05);
+
+
+
+border:
+
+1px solid rgba(255,255,255,.15);
 
 
 
@@ -554,7 +618,6 @@ position:absolute;
 bottom:45px;
 
 
-
 font-size:14px;
 
 
@@ -570,7 +633,10 @@ color:#777;
 
 
 
-/* 등장 효과 */
+
+/* ===========================
+   등장
+=========================== */
 
 
 @keyframes appear{
@@ -584,12 +650,10 @@ opacity:0;
 
 transform:
 
-translateY(50px);
-
+translateY(40px);
 
 
 }
-
 
 
 to{
@@ -609,10 +673,6 @@ translateY(0);
 }
 
 
-
-
-
-/* 부유 효과 */
 
 
 @keyframes float{
@@ -686,9 +746,6 @@ font-size:12px;
 padding:30px;
 
 
-margin-top:50px;
-
-
 }
 
 
@@ -720,8 +777,8 @@ font-size:30px;
 
 
 
-<div class="space" id="space"></div>
 
+<div class="space" id="space"></div>
 
 
 <div class="portal"></div>
@@ -741,7 +798,6 @@ GGULVERSE
 
 
 
-
 <div class="subtitle">
 
 A NEW UNIVERSE BEGINS
@@ -750,9 +806,7 @@ A NEW UNIVERSE BEGINS
 
 
 
-
 <div class="project">
-
 
 
 <div class="chapter">
@@ -762,13 +816,11 @@ CHAPTER 01
 </div>
 
 
-
 <h2>
 
 EveryCalc
 
 </h2>
-
 
 
 <p>
@@ -782,6 +834,7 @@ Every Calculation in One Place
 
 
 
+
 <div class="loading">
 
 ENTERING GGULVERSE...
@@ -789,8 +842,9 @@ ENTERING GGULVERSE...
 </div>
 
 
-
 </div>
+
+
 
 
 
@@ -799,9 +853,7 @@ ENTERING GGULVERSE...
 <script>
 
 
-
 const space =
-
 document.getElementById("space");
 
 
@@ -810,79 +862,59 @@ document.getElementById("space");
 
 /*
 
-랜덤 우주 별 생성
+뒤쪽 일반 별
 
 */
 
 
-for(let i=0;i<150;i++){
+for(let i=0;i<130;i++){
 
 
 
 const star =
-
 document.createElement("div");
 
 
 
-star.className="star";
-
-
-
-
-
-star.style.left =
-
-Math.random()*100+"%";
-
-
-
-star.style.top =
-
-Math.random()*100+"%";
-
-
+star.className =
+"star normal";
 
 
 
 const size =
-
-Math.random()*3+1;
+Math.random()*2+0.5;
 
 
 
 star.style.width =
-
 size+"px";
-
 
 
 star.style.height =
-
 size+"px";
 
 
+
+star.style.left =
+Math.random()*100+"%";
+
+
+star.style.top =
+Math.random()*100+"%";
 
 
 
 star.style.animationDuration =
-
-(3 + Math.random()*5)+"s";
-
-
+(8+Math.random()*8)+"s";
 
 
 
 star.style.animationDelay =
-
-Math.random()*8+"s";
-
-
+Math.random()*10+"s";
 
 
 
 space.appendChild(star);
-
 
 
 }
@@ -890,8 +922,99 @@ space.appendChild(star);
 
 
 
-</script>
 
+
+
+/*
+
+빠른 워프 별
+
+*/
+
+
+for(let i=0;i<25;i++){
+
+
+
+const star =
+document.createElement("div");
+
+
+
+star.className =
+"star warp";
+
+
+
+const size =
+Math.random()*3+1;
+
+
+
+star.style.width =
+size+"px";
+
+
+star.style.height =
+size+"px";
+
+
+
+star.style.left =
+Math.random()*100+"%";
+
+
+star.style.top =
+Math.random()*100+"%";
+
+
+
+star.style.animationDuration =
+(3+Math.random()*4)+"s";
+
+
+
+star.style.animationDelay =
+Math.random()*8+"s";
+
+
+
+star.style.setProperty(
+"--trail",
+(20+Math.random()*70)+"px"
+);
+
+
+
+space.appendChild(star);
+
+
+}
+
+
+
+
+
+
+/*
+
+10초 후 EveryCalc 이동
+
+*/
+
+
+setTimeout(()=>{
+
+
+location.href =
+"https://ggulverse.github.io/everycalc/";
+
+
+},10000);
+
+
+
+</script>
 
 
 
