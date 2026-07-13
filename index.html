@@ -14,55 +14,16 @@ GGULVERSE | A New Universe Begins
 
 
 <meta name="description"
-content="GGULVERSE는 새로운 디지털 프로젝트와 서비스를 만들어가는 공간입니다. CHAPTER 01 EveryCalc">
+content="GGULVERSE는 새로운 디지털 프로젝트와 서비스를 만들어가는 공간입니다. 첫 번째 프로젝트 EveryCalc를 시작으로 다양한 서비스를 만들어갑니다.">
 
-<!-- ===========================
-     키워드
-=========================== -->
-     
+
 <meta name="keywords"
-content="GGULVERSE, EveryCalc, 온라인 계산기, 디지털 프로젝트, 웹서비스, 계산기 사이트">
-
-<!-- ===========================
-     Open Graph
-=========================== -->
-
-<meta property="og:type" content="website">
-
-<meta property="og:title"
-content="GGULVERSE | A New Universe Begins">
-
-<meta property="og:description"
-content="새로운 디지털 프로젝트가 시작되는 공간. CHAPTER 01 EveryCalc">
-
-<meta property="og:url"
-content="https://ggulverse.github.io/">
-
-<meta property="og:image"
-content="https://ggulverse.github.io/assets/og-image.png">
-
-<!-- ===========================
-     Twitter 카드
-=========================== -->
-
-<meta name="twitter:card"
-content="summary_large_image">
-
-
-<meta name="twitter:title"
-content="GGULVERSE | A New Universe Begins">
-
-
-<meta name="twitter:description"
-content="새로운 디지털 프로젝트가 시작되는 공간">
-
-
-<meta name="twitter:image"
-content="https://ggulverse.github.io/assets/og-image.png">
+content="GGULVERSE, EveryCalc, 온라인 계산기, 디지털 프로젝트, 웹서비스">
 
 
 <meta name="robots"
 content="index, follow">
+
 
 <link rel="canonical"
 href="https://ggulverse.github.io/">
@@ -76,6 +37,34 @@ href="https://ggulverse.github.io/">
 <script async
 src="https://pagead2.googlesyndication.com/adsbygoogle.js?client=ca-pub-6952372400242875"
 crossorigin="anonymous"></script>
+
+
+
+
+
+<!-- ===========================
+     Open Graph
+=========================== -->
+
+
+<meta property="og:type"
+content="website">
+
+
+<meta property="og:title"
+content="GGULVERSE | A New Universe Begins">
+
+
+<meta property="og:description"
+content="새로운 디지털 프로젝트가 시작되는 공간. 첫 번째 프로젝트 EveryCalc">
+
+
+<meta property="og:url"
+content="https://ggulverse.github.io/">
+
+
+<meta property="og:image"
+content="https://ggulverse.github.io/assets/og-image.png">
 
 
 
@@ -162,7 +151,6 @@ circle at center,
 
 .space{
 
-
 position:absolute;
 
 width:100%;
@@ -181,8 +169,8 @@ overflow:hidden;
 
 
 
-.star{
 
+.star{
 
 position:absolute;
 
@@ -203,8 +191,10 @@ background:white;
 
 
 
+
+
 /* ===========================
-   먼 별 + 중간 별
+   먼 별
 =========================== */
 
 
@@ -247,7 +237,6 @@ scale(.3);
 
 
 
-
 to{
 
 
@@ -268,8 +257,8 @@ opacity:0;
 }
 
 
-
 }
+
 
 
 
@@ -292,8 +281,6 @@ warpMove linear infinite;
 
 
 }
-
-
 
 
 
@@ -331,7 +318,6 @@ opacity:.8;
 
 
 
-
 100%{
 
 
@@ -352,7 +338,6 @@ opacity:0;
 }
 
 
-
 }
 
 
@@ -360,9 +345,8 @@ opacity:0;
 
 
 
-
 /* ===========================
-   차원문 빛
+   포털
 =========================== */
 
 
@@ -416,7 +400,6 @@ portalPulse 10s infinite;
 
 
 }
-
 
 
 
@@ -497,7 +480,6 @@ text-align:center;
 
 
 
-
 .brand{
 
 
@@ -510,8 +492,7 @@ font-weight:900;
 letter-spacing:18px;
 
 
-color:#eeeeee;
-
+color:#eee;
 
 
 animation:
@@ -553,7 +534,7 @@ fadeIn 5s ease;
 
 
 /* ===========================
-   프로젝트 카드
+   카드
 =========================== */
 
 
@@ -566,13 +547,13 @@ position:relative;
 display:block;
 
 
-margin-top:80px;
+margin-top:60px;
 
 
-padding:40px 70px;
+padding:32px 55px;
 
 
-border-radius:30px;
+border-radius:26px;
 
 
 
@@ -592,11 +573,9 @@ rgba(255,255,255,.05);
 
 
 
-
 border:
 
 1px solid rgba(130,160,255,.18);
-
 
 
 
@@ -606,19 +585,16 @@ blur(20px);
 
 
 
-
 box-shadow:
 
 0 0 60px rgba(50,80,200,.15);
 
 
 
-
 transition:
 
 transform .4s ease,
-background .4s ease,
-border-color .4s ease;
+background .4s ease;
 
 
 
@@ -629,6 +605,8 @@ float 6s infinite;
 
 }
 
+
+
 .project::before{
 
 
@@ -638,12 +616,11 @@ content:"";
 position:absolute;
 
 
-inset:-40px;
+inset:-35px;
 
 
 
-border-radius:50px;
-
+border-radius:45px;
 
 
 
@@ -670,20 +647,14 @@ filter:
 blur(30px);
 
 
-
 }
-
-
-
-
-
 
 .project:hover{
 
 
 transform:
 
-translateY(-20px)
+translateY(-15px)
 scale(1.03);
 
 
@@ -706,31 +677,13 @@ rgba(255,255,255,.35);
 
 
 
-.chapter{
-
-
-font-size:13px;
-
-
-letter-spacing:5px;
-
-
-color:#777;
-
-
-}
-
-
-
-
-
 .project h2{
 
 
-margin-top:15px;
+margin-top:10px;
 
 
-font-size:42px;
+font-size:36px;
 
 
 font-weight:800;
@@ -745,10 +698,13 @@ font-weight:800;
 .project p{
 
 
-margin-top:12px;
+margin-top:10px;
 
 
 color:#888;
+
+
+font-size:14px;
 
 
 }
@@ -760,7 +716,7 @@ color:#888;
 .enter{
 
 
-margin-top:20px;
+margin-top:18px;
 
 
 font-size:12px;
@@ -776,12 +732,6 @@ color:#999;
 
 
 
-
-
-
-/* ===========================
-   로딩
-=========================== */
 
 
 .loading{
@@ -802,12 +752,15 @@ letter-spacing:4px;
 color:#555;
 
 
+
 animation:
 
 loadingPulse 2s infinite;
 
 
 }
+
+
 
 
 
@@ -835,7 +788,6 @@ opacity:1;
 
 
 }
-
 
 
 
@@ -873,9 +825,7 @@ translateY(0);
 }
 
 
-
 }
-
 
 
 
@@ -902,22 +852,19 @@ translateY(0);
 
 transform:
 
-translateY(-12px);
+translateY(-10px);
 
 
 }
 
 
-
 }
-
 
 
 
 
 
 @media(max-width:700px){
-
 
 
 .brand{
@@ -946,10 +893,10 @@ font-size:12px;
 .project{
 
 
-padding:30px;
+margin-top:45px;
 
 
-margin-top:50px;
+padding:28px 35px;
 
 
 }
@@ -975,21 +922,6 @@ font-size:30px;
 
 </style>
 
-<script type="application/ld+json">
-
-{
- "@context":"https://schema.org",
- "@type":"WebSite",
- "name":"GGULVERSE",
- "url":"https://ggulverse.github.io/",
- "description":"새로운 디지털 프로젝트와 서비스를 만들어가는 공간",
- "creator":{
-   "@type":"Organization",
-   "name":"GGULVERSE"
- }
-}
-
-</script>
 
 </head>
 
@@ -1039,13 +971,6 @@ A NEW UNIVERSE BEGINS
 class="project">
 
 
-<div class="chapter">
-
-CHAPTER 01
-
-</div>
-
-
 
 <h2>
 
@@ -1073,6 +998,7 @@ ENTER →
 
 
 
+
 </a>
 
 
@@ -1095,7 +1021,6 @@ ENTERING GGULVERSE...
 
 
 
-
 <script>
 
 
@@ -1106,11 +1031,7 @@ document.getElementById("space");
 
 
 
-
-// ===========================
 // 먼 별
-// ===========================
-
 
 for(let i=0;i<120;i++){
 
@@ -1123,10 +1044,8 @@ star.className =
 "star normal";
 
 
-
 const size =
 Math.random()*1.2+0.3;
-
 
 
 star.style.width =
@@ -1135,31 +1054,26 @@ size+"px";
 
 star.style.height =
 size+"px";
-
 
 
 star.style.opacity =
 Math.random()*0.35+0.15;
 
 
-
 star.style.left =
 Math.random()*100+"%";
 
 
 star.style.top =
 Math.random()*100+"%";
-
 
 
 star.style.animationDuration =
 (18+Math.random()*15)+"s";
 
 
-
 star.style.animationDelay =
 Math.random()*15+"s";
-
 
 
 space.appendChild(star);
@@ -1171,31 +1085,21 @@ space.appendChild(star);
 
 
 
-
-
-
-// ===========================
 // 중간 별
-// ===========================
-
 
 for(let i=0;i<40;i++){
 
 
-
 const star =
 document.createElement("div");
-
 
 
 star.className =
 "star normal";
 
 
-
 const size =
 Math.random()*2+0.8;
-
 
 
 star.style.width =
@@ -1204,36 +1108,29 @@ size+"px";
 
 star.style.height =
 size+"px";
-
 
 
 star.style.opacity =
 Math.random()*0.4+0.4;
 
 
-
 star.style.left =
 Math.random()*100+"%";
-
 
 
 star.style.top =
 Math.random()*100+"%";
 
 
-
 star.style.animationDuration =
 (10+Math.random()*8)+"s";
-
 
 
 star.style.animationDelay =
 Math.random()*8+"s";
 
 
-
 space.appendChild(star);
-
 
 
 }
@@ -1242,30 +1139,21 @@ space.appendChild(star);
 
 
 
-
-
-// ===========================
-// 가까운 상승 별
-// ===========================
-
+// 가까운 별
 
 for(let i=0;i<10;i++){
-
 
 
 const star =
 document.createElement("div");
 
 
-
 star.className =
 "star warp";
 
 
-
 const size =
 Math.random()*3+1.5;
-
 
 
 star.style.width =
@@ -1276,29 +1164,23 @@ star.style.height =
 size+"px";
 
 
-
 star.style.left =
 Math.random()*100+"%";
-
 
 
 star.style.top =
 Math.random()*100+"%";
 
 
-
 star.style.animationDuration =
 (4+Math.random()*4)+"s";
-
 
 
 star.style.animationDelay =
 Math.random()*12+"s";
 
 
-
 space.appendChild(star);
-
 
 
 }
@@ -1307,10 +1189,7 @@ space.appendChild(star);
 
 
 
-
-// ===========================
-// 10초 후 이동
-// ===========================
+// 10초 후 EveryCalc 이동
 
 
 setTimeout(()=>{
@@ -1322,7 +1201,6 @@ location.href =
 
 
 },10000);
-
 
 
 
