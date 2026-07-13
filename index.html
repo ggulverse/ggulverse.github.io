@@ -8,13 +8,13 @@
 
 <title>GGULVERSE | A New Universe Begins</title>
 
-
-<!-- 테스트용 10초 이동 -->
 <meta http-equiv="refresh" content="10;url=https://ggulverse.github.io/everycalc/">
 
 
-<!-- 애드센스 코드 -->
-
+<!-- ===========================
+     애드센스 코드
+=========================== -->
+    
 <script async src="https://pagead2.googlesyndication.com/adsbygoogle.js?client=ca-pub-6952372400242875"
 crossorigin="anonymous"></script>
 
@@ -22,83 +22,81 @@ crossorigin="anonymous"></script>
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 
 body{
 
-    width:100%;
-    height:100vh;
+width:100%;
+height:100vh;
 
-    overflow:hidden;
+overflow:hidden;
 
-    background:
-    radial-gradient(
-    circle at center,
-    #182642 0%,
-    #090b15 35%,
-    #000 75%
-    );
+background:
 
-    color:white;
+radial-gradient(
+circle at 50% 45%,
+#17294d 0%,
+#090c18 35%,
+#000 80%
+);
 
-    font-family:
-    "Pretendard",
-    "Noto Sans KR",
-    Arial,
-    sans-serif;
+color:white;
+
+font-family:
+"Pretendard",
+"Noto Sans KR",
+Arial,
+sans-serif;
 
 }
 
 
 
-/* 우주 공간 */
 
 .space{
 
-    position:absolute;
+position:absolute;
 
-    width:100%;
-    height:100%;
+width:100%;
+height:100%;
 
-    perspective:1000px;
+perspective:1200px;
 
-    overflow:hidden;
+overflow:hidden;
 
 }
 
 
 
-/* 워프 별 */
+/* 별 */
 
 .star{
 
-    position:absolute;
+position:absolute;
 
-    left:50%;
-    top:50%;
+left:50%;
+top:50%;
 
-    width:3px;
-    height:3px;
+background:white;
 
-    background:white;
+border-radius:50%;
 
-    border-radius:50%;
+opacity:0;
 
-    animation:
-    warp 6s linear infinite;
 
-    opacity:0;
+animation:
+warp 6s linear infinite;
 
 }
 
 
 
 /*
- 앞으로 돌진 + 약간 위쪽 대각선
+정면 전진 + 위쪽 대각선
 */
 
 @keyframes warp{
@@ -106,186 +104,148 @@ body{
 
 0%{
 
-    transform:
+transform:
 
-    translate3d(
-    -100px,
-    120px,
-    -900px
-    )
+translate3d(
+0,
+80px,
+-1200px
+)
 
-    scale(.2);
+scale(.2);
 
-    opacity:0;
+
+opacity:0;
+
+}
+
+
+20%{
+
+opacity:.8;
 
 }
 
-
-30%{
-
-    opacity:1;
-
-}
 
 
 100%{
 
-    transform:
+transform:
 
-    translate3d(
-    220px,
-    -220px,
-    700px
-    )
+translate3d(
+120px,
+-600px,
+900px
+)
 
-    scale(5);
+scale(6);
 
-    opacity:0;
 
-}
-
+opacity:0;
 
 }
 
-
-
-/* 별 위치 다양화 */
-
-
-.star:nth-child(1){
-
-    animation-delay:0s;
-
-}
-
-.star:nth-child(2){
-
-    animation-delay:1s;
-
-}
-
-
-.star:nth-child(3){
-
-    animation-delay:2s;
-
-}
-
-
-.star:nth-child(4){
-
-    animation-delay:3s;
-
-}
-
-
-.star:nth-child(5){
-
-    animation-delay:4s;
-
-}
-
-
-.star:nth-child(6){
-
-    animation-delay:5s;
 
 }
 
 
 
 
-
-/* 중앙 워프 포털 */
+/* 중앙 워프 빛 */
 
 
 .portal{
 
 
-    position:absolute;
+position:absolute;
 
-    left:50%;
-    top:50%;
-
-
-    width:500px;
-    height:500px;
+left:50%;
+top:50%;
 
 
-    transform:
-    translate(-50%,-50%);
+width:600px;
+
+height:600px;
 
 
-    background:
+transform:
 
-    radial-gradient(
-    circle,
-    rgba(100,150,255,.35),
-    transparent 65%
-    );
+translate(-50%,-50%);
 
 
-    filter:blur(25px);
+background:
+
+radial-gradient(
+
+circle,
+
+rgba(90,150,255,.35),
+
+transparent 65%
+
+);
 
 
-    animation:
+filter:blur(30px);
 
-    portalMove 6s infinite;
+
+animation:
+
+portalPulse 7s infinite;
 
 
 }
 
 
 
-@keyframes portalMove{
+
+@keyframes portalPulse{
 
 
 0%,100%{
 
-    scale:1;
+scale:1;
 
-    opacity:.4;
+opacity:.3;
 
 }
 
 
 50%{
 
-    scale:1.5;
+scale:1.6;
 
-    opacity:.9;
-
-}
-
+opacity:.8;
 
 }
 
 
+}
 
 
 
-/* 내용 */
 
 
 .content{
 
 
-    position:absolute;
+position:absolute;
 
-    width:100%;
-    height:100%;
+width:100%;
 
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
+height:100%;
 
 
-    text-align:center;
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+
+text-align:center;
 
 
 }
@@ -297,16 +257,16 @@ body{
 .brand{
 
 
-    font-size:64px;
+font-size:70px;
 
-    font-weight:900;
+font-weight:900;
 
-    letter-spacing:15px;
+letter-spacing:18px;
 
 
-    animation:
+animation:
 
-    fadeUp 2s ease;
+appear 2.5s ease;
 
 
 }
@@ -318,16 +278,18 @@ body{
 .subtitle{
 
 
-    margin-top:20px;
+margin-top:20px;
 
-    color:#aaa;
+font-size:18px;
 
-    letter-spacing:4px;
+letter-spacing:5px;
+
+color:#aaa;
 
 
-    animation:
+animation:
 
-    fadeUp 3s ease;
+appear 4s ease;
 
 
 }
@@ -338,31 +300,31 @@ body{
 .project{
 
 
-    margin-top:70px;
+margin-top:80px;
 
 
-    padding:35px 60px;
+padding:40px 70px;
 
 
-    border-radius:25px;
+border-radius:30px;
 
 
-    border:
+border:
 
-    1px solid rgba(255,255,255,.15);
-
-
-    background:
-
-    rgba(255,255,255,.06);
+1px solid rgba(255,255,255,.18);
 
 
-    backdrop-filter:blur(15px);
+background:
+
+rgba(255,255,255,.06);
 
 
-    animation:
+backdrop-filter:blur(20px);
 
-    float 4s infinite;
+
+animation:
+
+float 5s infinite;
 
 
 }
@@ -374,24 +336,23 @@ body{
 .chapter{
 
 
-    font-size:13px;
+font-size:13px;
 
-    color:#888;
+letter-spacing:5px;
 
-    letter-spacing:4px;
+color:#888;
 
 
 }
 
 
 
-
 .project h2{
 
 
-    margin-top:15px;
+margin-top:15px;
 
-    font-size:38px;
+font-size:42px;
 
 
 }
@@ -401,13 +362,12 @@ body{
 .project p{
 
 
-    margin-top:10px;
+margin-top:10px;
 
-    color:#aaa;
+color:#aaa;
 
 
 }
-
 
 
 
@@ -415,13 +375,13 @@ body{
 .loading{
 
 
-    position:absolute;
+position:absolute;
 
-    bottom:50px;
+bottom:45px;
 
-    color:#777;
+color:#777;
 
-    letter-spacing:2px;
+letter-spacing:3px;
 
 
 }
@@ -430,30 +390,31 @@ body{
 
 
 
-@keyframes fadeUp{
+@keyframes appear{
 
 
 from{
 
-    opacity:0;
+opacity:0;
 
-    transform:
-    translateY(40px);
+transform:
+translateY(50px);
 
 }
 
 
 to{
 
-    opacity:1;
+opacity:1;
 
-    transform:
-    translateY(0);
+transform:
+translateY(0);
+
+}
+
 
 }
 
-
-}
 
 
 
@@ -463,20 +424,19 @@ to{
 
 0%,100%{
 
-    transform:translateY(0);
+transform:translateY(0);
 
 }
 
 
 50%{
 
-    transform:translateY(-15px);
+transform:translateY(-15px);
 
 }
 
 
 }
-
 
 
 
@@ -486,25 +446,14 @@ to{
 </head>
 
 
+
 <body>
 
 
-<div class="space">
-
-<div class="star"></div>
-<div class="star"></div>
-<div class="star"></div>
-<div class="star"></div>
-<div class="star"></div>
-<div class="star"></div>
-
-
-</div>
-
+<div class="space" id="space"></div>
 
 
 <div class="portal"></div>
-
 
 
 
@@ -527,7 +476,6 @@ A NEW UNIVERSE BEGINS
 
 
 
-
 <div class="project">
 
 
@@ -538,7 +486,6 @@ CHAPTER 01
 </div>
 
 
-
 <h2>
 
 EveryCalc
@@ -546,13 +493,11 @@ EveryCalc
 </h2>
 
 
-
 <p>
 
 Every Calculation in One Place
 
 </p>
-
 
 
 </div>
@@ -567,6 +512,73 @@ ENTERING GGULVERSE...
 
 
 </div>
+
+
+
+
+<script>
+
+
+const space =
+document.getElementById("space");
+
+
+
+for(let i=0;i<120;i++){
+
+
+const star =
+document.createElement("div");
+
+
+star.className="star";
+
+
+
+star.style.left =
+Math.random()*100+"%";
+
+
+star.style.top =
+Math.random()*100+"%";
+
+
+
+const size =
+Math.random()*3+1;
+
+
+star.style.width =
+size+"px";
+
+
+star.style.height =
+size+"px";
+
+
+
+star.style.animationDuration =
+(3+Math.random()*5)+"s";
+
+
+
+star.style.animationDelay =
+Math.random()*6+"s";
+
+
+
+star.style.opacity =
+Math.random();
+
+
+
+space.appendChild(star);
+
+
+}
+
+
+</script>
 
 
 
